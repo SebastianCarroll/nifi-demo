@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flowController encoding-version="1.0">
+  <maxTimerDrivenThreadCount>10</maxTimerDrivenThreadCount>
+  <maxEventDrivenThreadCount>5</maxEventDrivenThreadCount>
+  <rootGroup>
+    <id>d086a790-0156-1000-68a9-e962e2f8e415</id>
+    <name>NiFi Flow</name>
+    <position x="0.0" y="0.0"/>
+    <comment/>
+    <processor>
+      <id>d820bc85-0156-1000-f1f8-92b2083afb9d</id>
+      <name>LogAttribute</name>
+      <position x="789.5312420088064" y="531.926335041675"/>
+      <styles/>
+      <comment/>
+      <class>org.apache.nifi.processors.standard.LogAttribute</class>
+      <maxConcurrentTasks>1</maxConcurrentTasks>
+      <schedulingPeriod>0 sec</schedulingPeriod>
+      <penalizationPeriod>30 sec</penalizationPeriod>
+      <yieldPeriod>1 sec</yieldPeriod>
+      <bulletinLevel>WARN</bulletinLevel>
+      <lossTolerant>false</lossTolerant>
+      <scheduledState>STOPPED</scheduledState>
+      <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+      <runDurationNanos>0</runDurationNanos>
+      <property>
+        <name>Log Level</name>
+        <value>info</value>
+      </property>
+      <property>
+        <name>Log Payload</name>
+        <value>false</value>
+      </property>
+      <property>
+        <name>Attributes to Log</name>
+      </property>
+      <property>
+        <name>Attributes to Ignore</name>
+      </property>
+      <property>
+        <name>Log prefix</name>
+      </property>
+    </processor>
+    <processor>
+      <id>d8237d5f-0156-1000-4c63-09c2e4611d6e</id>
+      <name>PutEmail</name>
+      <position x="195.39009372115015" y="497.20320027005516"/>
+      <styles/>
+      <comment/>
+      <class>org.apache.nifi.processors.standard.PutEmail</class>
+      <maxConcurrentTasks>1</maxConcurrentTasks>
+      <schedulingPeriod>0 sec</schedulingPeriod>
+      <penalizationPeriod>30 sec</penalizationPeriod>
+      <yieldPeriod>1 sec</yieldPeriod>
+      <bulletinLevel>WARN</bulletinLevel>
+      <lossTolerant>false</lossTolerant>
+      <scheduledState>STOPPED</scheduledState>
+      <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+      <runDurationNanos>0</runDurationNanos>
+      <property>
+        <name>SMTP Hostname</name>
+      </property>
+      <property>
+        <name>SMTP Port</name>
+        <value>25</value>
+      </property>
+      <property>
+        <name>SMTP Username</name>
+      </property>
+      <property>
+        <name>SMTP Password</name>
+      </property>
+      <property>
+        <name>SMTP Auth</name>
+        <value>true</value>
+      </property>
+      <property>
+        <name>SMTP TLS</name>
+        <value>false</value>
+      </property>
+      <property>
+        <name>SMTP Socket Factory</name>
+        <value>javax.net.ssl.SSLSocketFactory</value>
+      </property>
+      <property>
+        <name>SMTP X-Mailer Header</name>
+        <value>NiFi</value>
+      </property>
+      <property>
+        <name>Content Type</name>
+        <value>text/plain</value>
+      </property>
+      <property>
+        <name>From</name>
+      </property>
+      <property>
+        <name>To</name>
+      </property>
+      <property>
+        <name>CC</name>
+      </property>
+      <property>
+        <name>BCC</name>
+      </property>
+      <property>
+        <name>Subject</name>
+        <value>Message from NiFi</value>
+      </property>
+      <property>
+        <name>Message</name>
+        <value/>
+      </property>
+      <property>
+        <name>Attach File</name>
+        <value>false</value>
+      </property>
+      <property>
+        <name>Include All Attributes In Message</name>
+        <value>false</value>
+      </property>
+    </processor>
+    <processor>
+      <id>d825f686-0156-1000-0dff-d0fb2595f6fd</id>
+      <name>PutHDFS</name>
+      <position x="-334.3381609016101" y="97.4358588386171"/>
+      <styles/>
+      <comment/>
+      <class>org.apache.nifi.processors.hadoop.PutHDFS</class>
+      <maxConcurrentTasks>1</maxConcurrentTasks>
+      <schedulingPeriod>0 sec</schedulingPeriod>
+      <penalizationPeriod>30 sec</penalizationPeriod>
+      <yieldPeriod>1 sec</yieldPeriod>
+      <bulletinLevel>WARN</bulletinLevel>
+      <lossTolerant>false</lossTolerant>
+      <scheduledState>STOPPED</scheduledState>
+      <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+      <runDurationNanos>0</runDurationNanos>
+      <property>
+        <name>Hadoop Configuration Resources</name>
+      </property>
+      <property>
+        <name>Kerberos Principal</name>
+      </property>
+      <property>
+        <name>Kerberos Keytab</name>
+      </property>
+      <property>
+        <name>Kerberos Relogin Period</name>
+        <value>4 hours</value>
+      </property>
+      <property>
+        <name>Directory</name>
+      </property>
+      <property>
+        <name>Conflict Resolution Strategy</name>
+        <value>fail</value>
+      </property>
+      <property>
+        <name>Block Size</name>
+      </property>
+      <property>
+        <name>IO Buffer Size</name>
+      </property>
+      <property>
+        <name>Replication</name>
+      </property>
+      <property>
+        <name>Permissions umask</name>
+      </property>
+      <property>
+        <name>Remote Owner</name>
+      </property>
+      <property>
+        <name>Remote Group</name>
+      </property>
+      <property>
+        <name>Compression codec</name>
+        <value>NONE</value>
+      </property>
+    </processor>
+    <processor>
+      <id>d817e044-0156-1000-09a9-c789c9207742</id>
+      <name>SplitText</name>
+      <position x="195.35552502656446" y="94.46278749008576"/>
+      <styles/>
+      <comment/>
+      <class>org.apache.nifi.processors.standard.SplitText</class>
+      <maxConcurrentTasks>1</maxConcurrentTasks>
+      <schedulingPeriod>0 sec</schedulingPeriod>
+      <penalizationPeriod>30 sec</penalizationPeriod>
+      <yieldPeriod>1 sec</yieldPeriod>
+      <bulletinLevel>WARN</bulletinLevel>
+      <lossTolerant>false</lossTolerant>
+      <scheduledState>STOPPED</scheduledState>
+      <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+      <runDurationNanos>0</runDurationNanos>
+      <property>
+        <name>Line Split Count</name>
+        <value>1</value>
+      </property>
+      <property>
+        <name>Maximum Fragment Size</name>
+      </property>
+      <property>
+        <name>Header Line Count</name>
+        <value>0</value>
+      </property>
+      <property>
+        <name>Header Line Marker Characters</name>
+      </property>
+      <property>
+        <name>Remove Trailing Newlines</name>
+        <value>true</value>
+      </property>
+      <autoTerminatedRelationship>failure</autoTerminatedRelationship>
+    </processor>
+    <processor>
+      <id>d8208543-0156-1000-d0bc-03b5f88e49fe</id>
+      <name>LogAttribute</name>
+      <position x="1012.3611980634939" y="300.0344557215304"/>
+      <styles/>
+      <comment/>
+      <class>org.apache.nifi.processors.standard.LogAttribute</class>
+      <maxConcurrentTasks>1</maxConcurrentTasks>
+      <schedulingPeriod>0 sec</schedulingPeriod>
+      <penalizationPeriod>30 sec</penalizationPeriod>
+      <yieldPeriod>1 sec</yieldPeriod>
+      <bulletinLevel>WARN</bulletinLevel>
+      <lossTolerant>false</lossTolerant>
+      <scheduledState>STOPPED</scheduledState>
+      <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+      <runDurationNanos>0</runDurationNanos>
+      <property>
+        <name>Log Level</name>
+        <value>info</value>
+      </property>
+      <property>
+        <name>Log Payload</name>
+        <value>false</value>
+      </property>
+      <property>
+        <name>Attributes to Log</name>
+      </property>
+      <property>
+        <name>Attributes to Ignore</name>
+      </property>
+      <property>
+        <name>Log prefix</name>
+      </property>
+    </processor>
+    <processor>
+      <id>d7cc5080-0156-1000-cc81-71d4f3fa6e73</id>
+      <name>RouteOnContent</name>
+      <position x="203.20379638671875" y="295.21187019348145"/>
+      <styles/>
+      <comment/>
+      <class>org.apache.nifi.processors.standard.RouteOnContent</class>
+      <maxConcurrentTasks>1</maxConcurrentTasks>
+      <schedulingPeriod>0 sec</schedulingPeriod>
+      <penalizationPeriod>30 sec</penalizationPeriod>
+      <yieldPeriod>1 sec</yieldPeriod>
+      <bulletinLevel>WARN</bulletinLevel>
+      <lossTolerant>false</lossTolerant>
+      <scheduledState>STOPPED</scheduledState>
+      <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+      <runDurationNanos>0</runDurationNanos>
+      <property>
+        <name>Match Requirement</name>
+        <value>content must contain match</value>
+      </property>
+      <property>
+        <name>Character Set</name>
+        <value>UTF-8</value>
+      </property>
+      <property>
+        <name>Content Buffer Size</name>
+        <value>1 MB</value>
+      </property>
+      <property>
+        <name>DEBUG</name>
+        <value>DEBUG</value>
+      </property>
+      <property>
+        <name>WARN</name>
+        <value>WARN</value>
+      </property>
+      <property>
+        <name>ERRO</name>
+        <value>ERRO</value>
+      </property>
+      <property>
+        <name>INFO</name>
+        <value>INFO</value>
+      </property>
+    </processor>
+    <inputPort>
+      <id>d7cb3d84-0156-1000-7839-27fe92617723</id>
+      <name>From The Edge</name>
+      <position x="253.14202880859375" y="-55.49941062927246"/>
+      <comments/>
+      <scheduledState>RUNNING</scheduledState>
+      <maxConcurrentTasks>1</maxConcurrentTasks>
+    </inputPort>
+    <connection>
+      <id>d8194683-0156-1000-15ee-4b026c917eee</id>
+      <name/>
+      <bendPoints/>
+      <labelIndex>1</labelIndex>
+      <zIndex>0</zIndex>
+      <sourceId>d817e044-0156-1000-09a9-c789c9207742</sourceId>
+      <sourceGroupId>d086a790-0156-1000-68a9-e962e2f8e415</sourceGroupId>
+      <sourceType>PROCESSOR</sourceType>
+      <destinationId>d7cc5080-0156-1000-cc81-71d4f3fa6e73</destinationId>
+      <destinationGroupId>d086a790-0156-1000-68a9-e962e2f8e415</destinationGroupId>
+      <destinationType>PROCESSOR</destinationType>
+      <relationship>splits</relationship>
+      <maxWorkQueueSize>10000</maxWorkQueueSize>
+      <maxWorkQueueDataSize>1 GB</maxWorkQueueDataSize>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+    </connection>
+    <connection>
+      <id>d8243ecc-0156-1000-f75e-65b297f62c38</id>
+      <name/>
+      <bendPoints>
+        <bendPoint x="750.9148559570312" y="262.64892578125"/>
+      </bendPoints>
+      <labelIndex>1</labelIndex>
+      <zIndex>0</zIndex>
+      <sourceId>d7cc5080-0156-1000-cc81-71d4f3fa6e73</sourceId>
+      <sourceGroupId>d086a790-0156-1000-68a9-e962e2f8e415</sourceGroupId>
+      <sourceType>PROCESSOR</sourceType>
+      <destinationId>d8208543-0156-1000-d0bc-03b5f88e49fe</destinationId>
+      <destinationGroupId>d086a790-0156-1000-68a9-e962e2f8e415</destinationGroupId>
+      <destinationType>PROCESSOR</destinationType>
+      <relationship>DEBUG</relationship>
+      <maxWorkQueueSize>10000</maxWorkQueueSize>
+      <maxWorkQueueDataSize>1 GB</maxWorkQueueDataSize>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+    </connection>
+    <connection>
+      <id>d8209ab1-0156-1000-4a53-2738573b11b7</id>
+      <name/>
+      <bendPoints/>
+      <labelIndex>1</labelIndex>
+      <zIndex>0</zIndex>
+      <sourceId>d7cc5080-0156-1000-cc81-71d4f3fa6e73</sourceId>
+      <sourceGroupId>d086a790-0156-1000-68a9-e962e2f8e415</sourceGroupId>
+      <sourceType>PROCESSOR</sourceType>
+      <destinationId>d8208543-0156-1000-d0bc-03b5f88e49fe</destinationId>
+      <destinationGroupId>d086a790-0156-1000-68a9-e962e2f8e415</destinationGroupId>
+      <destinationType>PROCESSOR</destinationType>
+      <relationship>INFO</relationship>
+      <maxWorkQueueSize>10000</maxWorkQueueSize>
+      <maxWorkQueueDataSize>1 GB</maxWorkQueueDataSize>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+    </connection>
+    <connection>
+      <id>d8269f2d-0156-1000-1433-8cefff893b5b</id>
+      <name/>
+      <bendPoints/>
+      <labelIndex>1</labelIndex>
+      <zIndex>0</zIndex>
+      <sourceId>d817e044-0156-1000-09a9-c789c9207742</sourceId>
+      <sourceGroupId>d086a790-0156-1000-68a9-e962e2f8e415</sourceGroupId>
+      <sourceType>PROCESSOR</sourceType>
+      <destinationId>d825f686-0156-1000-0dff-d0fb2595f6fd</destinationId>
+      <destinationGroupId>d086a790-0156-1000-68a9-e962e2f8e415</destinationGroupId>
+      <destinationType>PROCESSOR</destinationType>
+      <relationship>original</relationship>
+      <maxWorkQueueSize>10000</maxWorkQueueSize>
+      <maxWorkQueueDataSize>1 GB</maxWorkQueueDataSize>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+    </connection>
+    <connection>
+      <id>d82462d0-0156-1000-395c-017cc66966f2</id>
+      <name/>
+      <bendPoints>
+        <bendPoint x="739.8467407226562" y="317.8737487792969"/>
+      </bendPoints>
+      <labelIndex>1</labelIndex>
+      <zIndex>0</zIndex>
+      <sourceId>d7cc5080-0156-1000-cc81-71d4f3fa6e73</sourceId>
+      <sourceGroupId>d086a790-0156-1000-68a9-e962e2f8e415</sourceGroupId>
+      <sourceType>PROCESSOR</sourceType>
+      <destinationId>d8208543-0156-1000-d0bc-03b5f88e49fe</destinationId>
+      <destinationGroupId>d086a790-0156-1000-68a9-e962e2f8e415</destinationGroupId>
+      <destinationType>PROCESSOR</destinationType>
+      <relationship>WARN</relationship>
+      <maxWorkQueueSize>10000</maxWorkQueueSize>
+      <maxWorkQueueDataSize>1 GB</maxWorkQueueDataSize>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+    </connection>
+    <connection>
+      <id>d7cc77b6-0156-1000-535c-550016cb644b</id>
+      <name/>
+      <bendPoints/>
+      <labelIndex>1</labelIndex>
+      <zIndex>0</zIndex>
+      <sourceId>d7cb3d84-0156-1000-7839-27fe92617723</sourceId>
+      <sourceGroupId>d086a790-0156-1000-68a9-e962e2f8e415</sourceGroupId>
+      <sourceType>INPUT_PORT</sourceType>
+      <destinationId>d817e044-0156-1000-09a9-c789c9207742</destinationId>
+      <destinationGroupId>d086a790-0156-1000-68a9-e962e2f8e415</destinationGroupId>
+      <destinationType>PROCESSOR</destinationType>
+      <relationship/>
+      <maxWorkQueueSize>10000</maxWorkQueueSize>
+      <maxWorkQueueDataSize>1 GB</maxWorkQueueDataSize>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+    </connection>
+    <connection>
+      <id>d8239914-0156-1000-eb68-b0d75429377f</id>
+      <name/>
+      <bendPoints/>
+      <labelIndex>1</labelIndex>
+      <zIndex>0</zIndex>
+      <sourceId>d7cc5080-0156-1000-cc81-71d4f3fa6e73</sourceId>
+      <sourceGroupId>d086a790-0156-1000-68a9-e962e2f8e415</sourceGroupId>
+      <sourceType>PROCESSOR</sourceType>
+      <destinationId>d8237d5f-0156-1000-4c63-09c2e4611d6e</destinationId>
+      <destinationGroupId>d086a790-0156-1000-68a9-e962e2f8e415</destinationGroupId>
+      <destinationType>PROCESSOR</destinationType>
+      <relationship>ERRO</relationship>
+      <maxWorkQueueSize>10000</maxWorkQueueSize>
+      <maxWorkQueueDataSize>1 GB</maxWorkQueueDataSize>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+    </connection>
+    <connection>
+      <id>d820d332-0156-1000-bc8f-5ab131a07a58</id>
+      <name/>
+      <bendPoints/>
+      <labelIndex>1</labelIndex>
+      <zIndex>0</zIndex>
+      <sourceId>d7cc5080-0156-1000-cc81-71d4f3fa6e73</sourceId>
+      <sourceGroupId>d086a790-0156-1000-68a9-e962e2f8e415</sourceGroupId>
+      <sourceType>PROCESSOR</sourceType>
+      <destinationId>d820bc85-0156-1000-f1f8-92b2083afb9d</destinationId>
+      <destinationGroupId>d086a790-0156-1000-68a9-e962e2f8e415</destinationGroupId>
+      <destinationType>PROCESSOR</destinationType>
+      <relationship>unmatched</relationship>
+      <maxWorkQueueSize>10000</maxWorkQueueSize>
+      <maxWorkQueueDataSize>1 GB</maxWorkQueueDataSize>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+    </connection>
+  </rootGroup>
+  <controllerServices/>
+  <reportingTasks/>
+</flowController>
