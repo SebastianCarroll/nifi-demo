@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
-  [1,2].each do |i|
+  [1,2,3].each do |i|
     hostname = "nifi-#{i}" 
     config.vm.define hostname do |nifi|
       nifi.vm.box = "centos/7"
