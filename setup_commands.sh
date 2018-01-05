@@ -11,4 +11,4 @@ sudo yum -y localinstall $JAVA_RPM
 [ ! -f $NIFI_TAR ] && wget http://mirror.serversupportforum.de/apache/nifi/1.0.0-BETA/$NIFI_TAR
 tar xzvf $NIFI_TAR -C /opt
 cd /opt
-./$NIFI_VER/bin/nifi.sh start
+#./$NIFI_VER/bin/nifi.sh start

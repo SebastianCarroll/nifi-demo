@@ -1,0 +1,23 @@
+HELO user
+MAIL FROM:<sender@example.com>
+RCPT TO:<recipient@example.com>
+DATA
+From: sender@example.com
+To: recipient@example.com
+Subject: Testing SMTP connectivity!
+X-Mailer: Febooti Automation Workshop (Unregistered)
+Content-Type: text/plain;
+              charset=UTF-8
+Date: Wed, 3 Nov 2010 17:13:54 +0200
+X-Priority: 3 (normal)
+
+SMTP connectivity test
+(with logging session details to text file).
+
+---
+email sent by unregistered version
+of Febooti Automation Workshop v2.3.0
+visit http://www.febooti.com to get full version
+
+.
+QUIT
